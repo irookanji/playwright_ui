@@ -4,7 +4,7 @@ test.beforeEach(async ({ page }) => {
     await page.goto('https://trail-running-app.netlify.app/')
   });
 
-test.describe.only('Launch Browser', () => {
+test.describe('Launch Browser', () => {
 
     test('Homepage has title and links to See How page', async ({ page }) => {
         await expect(page).toHaveTitle(/Allbirds App/);
