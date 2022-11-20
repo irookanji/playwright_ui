@@ -23,3 +23,12 @@ test('Username is required to be login', async ({ page }) => {
   await page.locator('role=button[name="Sign In"]').click()
   await expect(page.locator('#username-helper-text')).toBeVisible()
 })
+
+test('User successfully signed', async ({ page }) => {
+  await page.locator('#standard-basic').scrollIntoViewIfNeeded()
+  await page.locator('#standard-basic').fill('test123@gmail.com')
+  await page.locator('//button[normalize-space()="SIGN IN"]').click()
+  await expect(page.locator('//div[@class="sc-dPiLbb hjCPeB MuiBox-root css-0"]')).toContainText(
+    'You were successfully signed!',
+  )
+})
