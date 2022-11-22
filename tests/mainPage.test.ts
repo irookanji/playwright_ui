@@ -17,3 +17,7 @@ test('Cart opens', async ({ page }) => {
     ),
   ).toHaveText('Your Cart is Empty')
 })
+
+test('Shop The Collections is visible', async ({ page }) => {
+  await expect(page.locator('//p[normalize-space()="Shop The Collections"]')).toBeVisible()
+})
