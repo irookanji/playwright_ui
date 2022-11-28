@@ -21,3 +21,14 @@ test('Cart opens', async ({ page }) => {
 test('Shop The Collections is visible', async ({ page }) => {
   await expect(page.locator('//p[normalize-space()="Shop The Collections"]')).toBeVisible()
 })
+
+test.fixme('See how button', async ({ page }) => {
+  const seeHowBtn = page.locator('//button[normalize-space()="See How"]')
+  await expect(seeHowBtn).toHaveAttribute('href', '/see-how')
+})
+
+test('Sign in works correctly', async ({ page }) => {
+  await page.locator('//input[@id="standard-basic"]').fill('test@test.com')
+  await page.locator('//button[normalize-space()="SIGN IN"]').click()
+  await expect(page.locator('//p[contains(text(),"You were successfully signed!")]')).toBeVisible()
+})
