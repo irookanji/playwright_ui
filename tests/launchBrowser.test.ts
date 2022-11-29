@@ -19,4 +19,8 @@ test.describe('Launch Browser', () => {
 
     await expect(page.locator('//div[text()="Our Favorites"]')).toContainText('Our Favorites')
   })
+
+  test('Shop The Collections is visible', async ({ page }) => {
+    await expect(page.locator('//p[text()="Shop The Collections"]')).toBeVisible()
+  })
 })
