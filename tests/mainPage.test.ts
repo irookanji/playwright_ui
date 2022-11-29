@@ -24,6 +24,7 @@ test('Shop The Collections is visible', async ({ page }) => {
 
 test.fixme('See how button', async ({ page }) => {
   const seeHowBtn = page.locator('//button[normalize-space()="See How"]')
+  // await seeHowBtn.click()
   await expect(seeHowBtn).toHaveAttribute('href', '/see-how')
 })
 
