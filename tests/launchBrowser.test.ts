@@ -23,4 +23,9 @@ test.describe('Launch Browser', () => {
   test('Shop The Collections is visible', async ({ page }) => {
     await expect(page.locator('//p[text()="Shop The Collections"]')).toBeVisible()
   })
+
+  test('About page can be opened', async ({ page }) => {
+    await page.locator('//a[@aria-label="ABOUT"]//*[name()="svg"]').click()
+    await expect(page.locator('//button[normalize-space()="Get In Touch"]')).toBeVisible()
+  })
 })
