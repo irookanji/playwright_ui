@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test'
 
-test.beforeEach(async ({ page }) => {
-  await page.goto('/')
-})
-
 test.describe('Launch Browser', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/')
+  })
+
   test('Opens See How page', async ({ page }) => {
     await expect(page).toHaveTitle(/Allbirds App/)
     await expect(page.locator('//button[text()="See How"]')).toHaveText('See How')
